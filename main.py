@@ -1,29 +1,23 @@
 import pandas
 nato_csv = "nato_phonetic_alphabet.csv"
 nato_file = pandas.read_csv(nato_csv)
-#
-# # for (index, row) in nato_file.iterrows():
-# #     print(index)
-# #     print(row)
-# #     print(row.letter)
-#     # print(row.code)
-# nato_dict = {row.letter:row.code for (index, row) in nato_file.iterrows()}
-#     # print(nato_dict)
-#
-# try:
-#     user_input = input("What would you like to have translated to Nato code?: ").upper()
-# except TypeError:
-#     if user_input == range(0, 9):
-#         print(f"Sorry, letters only please")
-# else:
-#     nato_code = [nato_dict[letter] for letter in user_input]
-#     print(nato_code)
-#
-#     letter_list = [letter for letter in user_input]
-#     phonetics = [code for code in letter_list if code in nato_dict]
-#     # print(phonetics)
 
-"""angel-hoes solution"""
+nato_dict = {row.letter:row.code for (index, row) in nato_file.iterrows()}
+
+try:
+    user_input = input("What would you like to have translated to Nato code?: ").upper()
+except TypeError:
+    if user_input == range(0, 9):
+        print(f"Sorry, letters only please")
+else:
+    nato_code = [nato_dict[letter] for letter in user_input]
+    print(nato_code)
+
+    letter_list = [letter for letter in user_input]
+    phonetics = [code for code in letter_list if code in nato_dict]
+    # print(phonetics)
+
+"""alt code"""
 # print(nato_file.to_dict())
 phonetic_dict = {row.letter:row.code for (index, row) in nato_file.iterrows()}
 # print(phonetic_dict)
